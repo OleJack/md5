@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title> MD5 генерация </title>
+    <title>MD5 | olegt.ru</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="resources/css/4/bootstrap.min.css" type="text/css"/>
     <meta name="viewport"
@@ -14,7 +14,7 @@
         function getMd5() {
 
             let value = document.getElementById('string').value;
-            let copy = document.getElementById('copy')
+            let copy = document.getElementById('copy');
             let hash = '';
             hash = md5(value).toString();
             document.getElementById("hash").innerHTML = hash;
@@ -52,12 +52,7 @@
 </style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Helper (SQL)</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
+    <a class="navbar-brand" href="#">Helper</a>
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -83,17 +78,17 @@
         <div class="col-12">
             <div class="mb-4"></div>
             <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
+                <div class="col-md-3 col-lg-4 col-sm-1"></div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="form-group">
                         <p class="text-center" for="string"><small>Введите текст</small></p>
-                        <input class="form-control" id="string" type="text" maxlength="512" value=""
+                        <input class="form-control-lg" id="string" type="text" maxlength="512" value="" style="width: 100%"
                                onkeypress="return runScript(event)" autofocus>
                     </div>
                     <div class="mt-4"></div>
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <div class="mt-4"></div>
-                        <button type="button" onclick="getMd5();" class="btn btn-block btn-primary">
+                        <button type="button" onclick="getMd5();" class="btn btn-primary">
                             Сгенерировать
                         </button>
                     </div>
@@ -103,15 +98,23 @@
 
             <div class="row" style="margin-top: 30px">
                 <div class="mb-4"></div>
-                <div class="mt-4"></div>
-                <div class="col-12">
-                    <h2 class="text-center text-primary" id="hash"></h2>
+                <div class="col-md-3 col-sm-1"></div>
+                <div class="col-md-6 col-sm-10">
+                    <h2 class="text-center text-primary hidden-sm-down" id="hash"></h2>
                 </div>
-                <div class="mb-4"></div>
-                <div class="mt-4"></div>
-                <div class="col-12 text-center">
-                    <button id="copy" class="btn btn-outline-primary d-none" onclick="copy(this)">Copy</button>
+                <div class="col-1">
+                    <button id="copy" class="btn btn-outline-primary d-none hidden-sm-down" onclick="copy(this)">
+                        <i class="fa fa-files-o" aria-hidden="true"></i>
+                        Copy
+                    </button>
                 </div>
+                <div class="col-2"></div>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+            </div>
+            <div class="row">
+                <button id="copySm" class="btn btn-outline-primary d-none hidden-sm-down" onclick="copy(this)">
+                    Copy
+                </button>
             </div>
         </div>
     </div>
